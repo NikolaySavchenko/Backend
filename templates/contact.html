@@ -1,24 +1,13 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
 {% load static %}
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Remake Barber - Contact</title>
-	<link rel="icon" href="{% static 'img/favicon.png' %}" type="image/png">
-
-
-  <link rel="stylesheet" href="{% static 'styles.min.css' %}">
-</head>
-<body>
   <!--================Header Menu Area =================-->
   <header class="header_area">
     <div class="main_menu">
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container box_1620">
           <!-- Brand and toggle get grouped for better mobile display -->
-          <a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt=""></a>
+          <a class="navbar-brand logo_h" href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}" alt=""></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -27,14 +16,14 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
             <ul class="nav navbar-nav menu_nav justify-content-center">
-              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-              <li class="nav-item active"><a class="nav-link" href="contact.html">Contact</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Home</a></li>
+              <li class="nav-item active"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right navbar-social">
-              <li><a href="#"><i class="ti-facebook"></i></a></li>
-              <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
-              <li><a href="#"><i class="ti-instagram"></i></a></li>
-              <li><a href="#"><i class="ti-skype"></i></a></li>
+              <li><a href="https://www.facebook.com/"><i class="ti-facebook"></i></a></li>
+              <li><a href="https://twitter.com/"><i class="ti-twitter-alt"></i></a></li>
+              <li><a href="https://www.instagram.com/"><i class="ti-instagram"></i></a></li>
+              <li><a href="https://www.skype.com/"><i class="ti-skype"></i></a></li>
             </ul>
           </div>
         </div>
@@ -51,7 +40,7 @@
           <h1>Contact Us</h1>
           <nav aria-label="breadcrumb" class="banner-breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
               <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
             </ol>
           </nav>
@@ -66,7 +55,7 @@
   <section class="section-margin--small section-margin">
     <div class="container">
       <div class="d-none d-sm-block mb-5 pb-4">
-        Тут будет карта
+        We are here {{html_map|safe|escape}}
       </div>
 
 
@@ -173,16 +162,16 @@
             <h6>Follow Us</h6>
             <p>Let us be social</p>
             <div class="footer-social d-flex align-items-center">
-              <a href="#">
+              <a href="https://www.facebook.com/">
                 <i class="fab fa-facebook-f"></i>
               </a>
-              <a href="#">
+              <a href="https://twitter.com/">
                 <i class="fab fa-twitter"></i>
               </a>
-              <a href="#">
+              <a href="https://dribbble.com/">
                 <i class="fab fa-dribbble"></i>
               </a>
-              <a href="#">
+              <a href="https://www.behance.net/">
                 <i class="fab fa-behance"></i>
               </a>
             </div>
@@ -201,5 +190,4 @@
   <!--================ End Footer Area =================-->
 
   <script src="/home/olga/Desktop/Мои проекты/блог/scripts.js"></script>
-</body>
-</html>
+{% endblock %}
